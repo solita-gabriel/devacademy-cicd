@@ -28,9 +28,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Fail pipeline
-       run: exit 1
-
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, $Name!
@@ -40,6 +37,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: Fail pipeline
+       run: exit 1
 
       - name: Print npm version
         run: npm -v
